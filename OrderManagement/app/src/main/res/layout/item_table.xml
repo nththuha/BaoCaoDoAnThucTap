@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="table"
+            type="com.example.ordermanagement.model.TableEntity" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llTable"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/btn_room"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTable"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{table.tenBan}"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold"
+            tools:text="Table 1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvSoGhe"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{@string/slots_s(table.soGhe)}"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            tools:text="Slots: 4" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

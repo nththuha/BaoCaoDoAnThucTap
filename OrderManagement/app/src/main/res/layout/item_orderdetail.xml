@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.example.ordermanagement.model.OrderDetailEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/ticket">
+
+        <TextView
+            android:id="@+id/tvTenMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="@{detail.tenMA}"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BEEFSTEAK" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Amount: 1"
+            android:text="@{@string/amount_s(detail.soLuong)}"
+            app:layout_constraintTop_toTopOf="@+id/tvTenMon"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:layout_marginStart="310dp" />
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/tvTenMon"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="$800"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="510dp" />
+
+        <Button
+            android:id="@+id/btnEdit_Detail"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/update"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnCancel_Detail"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel_Detail"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnEdit_Detail"
+            android:text="@string/cancel"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="@id/btnEdit_Detail"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="28dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvTenMon"
+            app:layout_constraintTop_toBottomOf="@id/tvTenMon"
+            tools:text="Status: Doing"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="10dp"
+            android:text="@{@string/status(detail.trangThai)}" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

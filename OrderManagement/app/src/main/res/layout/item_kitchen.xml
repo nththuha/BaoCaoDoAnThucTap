@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="detail"
+            type="com.example.ordermanagement.model.OrderDetailEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/ticket">
+
+        <TextView
+            android:id="@+id/tvTenMon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:text="@{detail.tenMA}"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="BEEFSTEAK" />
+
+        <TextView
+            android:id="@+id/tvAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Amount: 1"
+            android:text="@{@string/amount_s(detail.soLuong)}"
+            app:layout_constraintTop_toBottomOf="@+id/tvTenMon"
+            app:layout_constraintStart_toStartOf="@id/tvTenMon"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvNote" />
+
+        <TextView
+            android:id="@+id/tvNote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Note: Not spicy"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvAmount"
+            app:layout_constraintStart_toStartOf="@id/tvTenMon"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/status(detail.trangThai)}"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvTenMon"
+            android:layout_marginStart="350dp"
+            tools:text="Status: Doing"
+            android:layout_marginTop="7dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/room_s(detail.tenPhong)}"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvStatus"
+            app:layout_constraintTop_toTopOf="@id/tvAmount"
+            tools:text="Room: VIP 1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/table_s(detail.tenBan)}"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tvStatus"
+            app:layout_constraintTop_toTopOf="@id/tvNote"
+            tools:text="Table: Table 1" />
+
+        <Button
+            android:id="@+id/btnDoing"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/doing"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="28dp"
+            app:layout_constraintBottom_toTopOf="@+id/btnDone"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/btnCancel_Nau"
+            app:layout_constraintTop_toBottomOf="@+id/btnDoing"
+            android:text="@string/done"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@id/btnDoing"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="28dp"
+            android:textColor="@color/black" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnCancel_Nau"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:textSize="28sp"
+            app:layout_constraintStart_toStartOf="@id/btnDoing"
+            app:layout_constraintTop_toBottomOf="@id/btnDone"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

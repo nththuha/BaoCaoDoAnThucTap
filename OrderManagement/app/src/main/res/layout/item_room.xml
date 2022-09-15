@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="room"
+            type="com.example.ordermanagement.model.RoomEntity" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llRoom"
+        android:layout_width="260dp"
+        android:layout_height="200dp"
+        android:background="@drawable/btn_room"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvRoom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{room.tenPhong}"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            tools:text="VIP 1"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Status: Unavailable"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="@{@string/status(room.trangThai)}"
+            android:layout_marginTop="15dp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>
